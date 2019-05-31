@@ -1,1 +1,0 @@
-These are the very start of this project . I am still figuring out how to use the mosaic or should I change my image input method. The experiment still doesn't work but the layout can be seen from the undex.html file.
