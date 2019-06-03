@@ -28,9 +28,31 @@ body{
 #Select{
     position: absolute;
     padding: 20px;
+    border: 1px dashed #c2c2c2;
+    margin: 10px 0px;
 }
 .item:hover{
-    opacity: 0.6;
-.item{
-    margin: 2px
+    opacity: 0.6;}
+    
+
+#Preview{
+    color: #c2c2c2;
+    
+    position: relative;
+    margin-left: 400px;
+    margin-top: 50px;
+    height: 304px;
+    width: 304px;
+}
+#input_image{
+    border: 4px solid yellow;
+    height: 300px;
+    width: 300px;
+}
+.Parameters{
+    color: #c2c2c2;
+    margin-top: 60px;
+    width: 325px;
+    height: 250px;
+    border: 1px dashed; 
 }
