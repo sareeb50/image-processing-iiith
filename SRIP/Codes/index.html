@@ -35,6 +35,7 @@ button {
 	function preview( img )
 	{
 		document.getElementById('input_layer').setAttribute('src',img);
+        init();
 	}
     function preview_sec( img )
 	{
@@ -43,6 +44,47 @@ button {
 
 
 </script>
+    
+<script>
+    var RunButton;
+    var paintButton;
+    var canvas;
+    var context;
+
+    function init() {
+            var image = document.getElementById('input_layer');
+            RunButton = document.getElementById('Run');
+            
+            canvas = document.getElementById('output_layer');
+            context = canvas.getContext('2d');
+  
+            // Set the canvas the same width and height of the image
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+           
+  
+            RunButton.addEventListener('click', addEffect);
+        }
+
+
+function addEffect() {
+    var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    changeToWhite(imageData.data);
+    context.putImageData(imageData, 0, 0);
+}
+
+function changeToWhite(data) {
+  for (var i = 0; i < data.length; i++ ) {
+    data[i] = 255;
+  }
+}
+
+//window.addEventListener('load', init);
+
+    
+    
+</script>    
 </head>
 <body>
      <div id="topbar">
@@ -86,7 +128,9 @@ button {
             </div>
         </div>
         
-        
+        <div>
+            <button id="Run">Run</button>
+        </div>
         
     </div>
     <div id="Preview">
@@ -97,7 +141,15 @@ button {
         <p>Input Layer</p>
 
     </div>
-    
+    <div id="Output">
+        <div id="output_image">
+            <canvas id="output_layer" class="output_image"></canvas>
+        </div>
+    	
+        <p>Output Layer</p>
+
+    </div>
+
     
     
     <div class="Parameters">
@@ -137,7 +189,7 @@ button {
              </div>
     </div>
     
-    <div id="placeholder" style="margin-left: 30px;margin-top: 10px; width:220px; padding: 5px;
+    <div id="placeholder" style="margin-left: 30px;margin-top: 10px; width:220px; padding: 5px; margin-bottom: 10px;
     border: solid grey 1px;height: 220px"><img id="secondary" src="images/add2.png"
     height="220px" width="220px"></div>
 
