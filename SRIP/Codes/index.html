@@ -53,6 +53,7 @@ button {
 
     function init() {
             var image = document.getElementById('input_layer');
+            var secimage = document.getElementById('secondary')
             RunButton = document.getElementById('Run');
             
             canvas = document.getElementById('output_layer');
@@ -69,6 +70,7 @@ button {
 
 
 function addEffect() {
+    drawImage(document.getElementById('input_layer'));
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     changeToWhite(imageData.data);
     context.putImageData(imageData, 0, 0);
@@ -76,11 +78,15 @@ function addEffect() {
 
 function changeToWhite(data) {
   for (var i = 0; i < data.length; i++ ) {
-    data[i] = 255;
+    data[i] /=2;
   }
 }
+    function drawImage(image) {
+  context.drawImage(image, 0, 0);
+}
 
-//window.addEventListener('load', init);
+
+
 
     
     
