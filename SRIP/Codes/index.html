@@ -32,6 +32,9 @@ button {
 }
 </style>
 <script type="text/javascript">
+    var canvas2;
+    var context2;
+    window.addEventListener('load',secimgdisplay);
 	function preview( img )
 	{
 		document.getElementById('input_layer').setAttribute('src',img);
@@ -39,21 +42,32 @@ button {
 	}
     function preview_sec( img )
 	{
-		document.getElementById('secondary').setAttribute('src',img);
+		
+        document.getElementById('secondary_image').setAttribute('src',img);
+        secimgdisplay();
+        
 	}
+    function secimgdisplay()
+    {
+        var image2 = document.getElementById('secondary_image');
+        canvas2 = document.getElementById('secondary');
+        context2 = canvas2.getContext('2d');
+        canvas2.width = image2.width;
+        canvas2.height = image2.height;
+        context2.drawImage(image2, 0, 0);
+    }
 
 
 </script>
     
 <script>
     var RunButton;
-    var paintButton;
     var canvas;
     var context;
 
     function init() {
             var image = document.getElementById('input_layer');
-            var secimage = document.getElementById('secondary')
+            //var secimage = document.getElementById('secondary')
             RunButton = document.getElementById('Run');
             
             canvas = document.getElementById('output_layer');
@@ -72,13 +86,17 @@ button {
 function addEffect() {
     drawImage(document.getElementById('input_layer'));
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-    changeToWhite(imageData.data);
+    var imageData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height);
+    changeToWhite(imageData.data, imageData2.data);
     context.putImageData(imageData, 0, 0);
 }
 
-function changeToWhite(data) {
-  for (var i = 0; i < data.length; i++ ) {
-    data[i] /=2;
+function changeToWhite(data1,data2) {
+  for (var i = 0; i < data1.length; i++ ) 
+  {
+    data1[i] +=data2[i];
+      if(data1[1]>255){data1[i]=255;}
+      if(data1[1]<0){data1[i]=0;}
   }
 }
     function drawImage(image) {
@@ -195,9 +213,11 @@ function changeToWhite(data) {
              </div>
     </div>
     
-    <div id="placeholder" style="margin-left: 30px;margin-top: 10px; width:220px; padding: 5px; margin-bottom: 10px;
-    border: solid grey 1px;height: 220px"><img id="secondary" src="images/add2.png"
-    height="220px" width="220px"></div>
+    <div id="placeholder" style="margin-left: 30px;margin-top: 10px; width:300px; padding: 5px; margin-bottom: 10px;
+    border: solid grey 1px;height: 300px">
+            <img id="secondary_image" src="images/add2.png"  style="display: none;" >
+            <canvas id="secondary" class="secondary_image"></canvas>
+    </div>
 
 
 
