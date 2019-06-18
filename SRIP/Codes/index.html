@@ -2,12 +2,13 @@
 <html>
 <head>
 	<title>Virtual Lab in Image Processing</title>
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="arith.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>   
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="arith.js"></script>
 <style>
     body {
     font-family: sans-serif;
@@ -36,7 +37,7 @@ button {
     
 </head>
 <body>
-     <div id="topbar">
+     <div id="topbar"> <!--Heading-->
      	<div id="iiit"><img src="images/iiit.png" width="100" height="70"></div>
      	<div id="heading"><h1>Virtual Lab for IMAGE PROCESSING</h1></div>
      </div>
@@ -77,8 +78,9 @@ button {
             </div>
         </div>
         
-        <div>
+        <div class=".btn-group">
             <button id="Run">Run</button>
+            <button id="reset"onclick="FormReset()">Reset</button>
         </div>
         
     </div>
@@ -101,12 +103,12 @@ button {
 
     
     
-    <div class="Parameters">
-             <table>
+    <div class="Parameters" >
+             <table id="table">
                  <tr valign="top">
                      <td>
                         <h3 style="margin-left: 5px;"> Select Operation</h3>
-                        <form name="Operation">
+                        <form name="Operation" id="OperForm">
                         <input type="radio" name="Operatn" value="1" checked/>Addition<br />
                         <input type="radio" name="Operatn" value="2" />Subtraction<br/>
                         <input type="radio" name="Operatn" value="3" />Difference<br/>
@@ -116,7 +118,7 @@ button {
                      </td>
                      <td>
                          <h3 style="margin-left: 5px;">Select Fitting</h3>
-                         <form name="technique">
+                         <form name="technique" id="FitForm">
                          <input type="radio" name="fitting" value="1" checked/>Clipping<br/>
                          <input type="radio" name="fitting" value="2" />Auto-Scaling<br />
                          </form> 
@@ -125,6 +127,7 @@ button {
              </table>
         
              <h3 style="margin: 5px">Select Secondary Image</h3>
+             <form id="SecForm">
              <div id="radio">
 	               <input type="radio" id="dully" name="inpImage" value="images/add2.png"
 	               onclick="preview_sec('images/add2.png')"
@@ -135,17 +138,17 @@ button {
 	               <input type="radio" id="grady" name="inpImage" value="images/add3.png"
 	               onclick="preview_sec('images/add3.png')"/>
 	               <label for="grady">Gradient</label>
-             </div>
+             </div></form>
     </div>
     
     <div id="placeholder" style="margin-left: 30px;margin-top: 10px; width:300px; padding: 5px; margin-bottom: 10px;
     border: solid grey 1px;height: 300px">
-            <img id="secondary_image" src="images/add2.png"  style="display: none;" >
-            <canvas id="secondary" class="secondary_image"></canvas>
+            <img id="secondary_image" src="images/add2.png"   >
+            <canvas id="secondary" class="secondary_image" style="display: none"></canvas>
     </div>
 
 
-
+    <canvas id='blank' style='display:none'></canvas>
     
 
     

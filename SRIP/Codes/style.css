@@ -2,6 +2,7 @@ body{
 	background-color: #171717;
     width: 1200px;
     margin: auto;
+   
 }
 #iiit{
 	position: absolute;
@@ -14,6 +15,7 @@ body{
 	color: #C2C2C2;
 	font-size: 1em;
     
+    
 }
 #topbar{
     background-color: #3a3a3a;
@@ -21,15 +23,35 @@ body{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    
 }
 #sel{
     color: #c2c2c2;
+    font-family: Titillium Web ; 
+    margin-bottom: 7px;
+    padding-left: 25px;
+    font-weight: bold;
+    font-size: 17px;
 }
 #Select{
     position: absolute;
     padding: 20px;
-    border: 1px dashed #c2c2c2;
+    padding-left: 35px;
+    border: 1px solid #c2c2c2;
+    border-radius: 20px;
     margin: 10px 0px;
+}
+#Run{
+    margin-right: 69px;
+    padding: 10px 30px;
+    font-family: Titillium Web ; 
+    border-radius: 15px
+    
+}
+#reset{
+    padding: 10px 25px;
+    font-family: Titillium Web ; 
+    border-radius: 15px;
 }
 .item:hover{
     opacity: 0.6;}
@@ -44,6 +66,13 @@ body{
     height: 304px;
     width: 304px;
 }
+#table{
+    margin: auto
+}
+#SecForm{
+    padding-left: 73px;
+    
+}
 #input_image{
     border: 4px solid yellow;
     height: 300px;
@@ -52,11 +81,15 @@ body{
 .Parameters{
 
     color: #c2c2c2;
-    margin-top: 90px;
-    width: 340px;
-    height: 250px;
-    border: 1px dashed;
-    
+    margin-top: 110px;
+    width: 355px;
+    height: 270px;
+    border: 1px solid;
+    border-radius: 20px;
+    font-family: Titillium Web ;    
+}
+h3{
+    text-align: center;
 }
 #Output{
     margin-left: 800px;
@@ -73,3 +106,5 @@ body{
 #Run{
     margin-top: 5px;
 }
+
+
