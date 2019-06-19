@@ -1,4 +1,4 @@
-# IMAGE ARITHMETIC : PROCEDURE
+#+TITLE: IMAGE ARITHMETIC : PROCEDURE
 
 The experiment is design to understand and learn the image arithmetic concepts. This experiment consists five parts:
 
@@ -10,15 +10,15 @@ The experiment is design to understand and learn the image arithmetic concepts. 
 
 ** STEPS TO RUN THE EXPERIMENT :
 
-- STEP 1. Select an image from the images in the image grid.
+- STEP 1: Select an image from the images in the image grid.
 
-- STEP 2. Select secondary image by choosing either of the 'dull' , 'bright' or 'gradient' images.
+- STEP 2: Select secondary image by choosing either of the 'dull' , 'bright' or 'gradient' images.
 
-- STEP 3. Select one option from 'addition', 'subtraction', 'difference', 'multiplication' and 'division'.
+- STEP 3: Select one option from 'addition', 'subtraction', 'difference', 'multiplication' and 'division'.
 
-- STEP 4. Select the one option from 'clipping' and 'auto-scaling'.
+- STEP 4: Select the one option from 'clipping' and 'auto-scaling'.
 
-- STEP 5. Select run option to perform the operations.
+- STEP 5: Select run option to perform the operations.
        Output result will be displayed in the output layer.
 
 
