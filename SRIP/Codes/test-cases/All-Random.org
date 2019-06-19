@@ -1,0 +1,31 @@
+* Author: Shoaib
+* Date Created: 19 Jun 2019
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To check all functions are working
+
+* Pre conditions
+  - Nil
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Select any image from the grid.
+  2. Click on Run. 
+  3. Select Any option from the operation menu.
+  4. Select Any option from the fitting menu.
+  5. Click on Run.
+  6. Check if a processed image is displayed on the output Layer.
+  7. Repeat steps 3 to 6 five times.
+
+* Expected result
+  1. On each successive operation a different kinds of processed imge will be displayed.
+
+* Review/comments
+  The output Layer must never be blank . If it becomes blank, then there is an error. 

@@ -1,0 +1,50 @@
+* Author: Shoaib
+* Date Created: 19 Jun 2019
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To check whether Reset button is working
+
+* Pre conditions
+  - Nil
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Select "Multiplication" from operation menu. 
+  2. * Author: Shoaib
+* Date Created: 19 Jun 2019
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To check whether reset button is able to handle error
+
+* Pre conditions
+  - Nil
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Select "Multiplication" from Operation menu. 
+  2. Select "Auto-Scaling" from Fitting menu.
+  3. Select "Gradient" from Secondary Image menu.
+  4. Click on run.
+  5. Click on Reset Button.
+
+* Expected result
+  1. The radio buttons should go back to the initially checked options.
+  2. The input and output layer should become empty.
+
+* Review/comments
+  The Reset button is working.
+

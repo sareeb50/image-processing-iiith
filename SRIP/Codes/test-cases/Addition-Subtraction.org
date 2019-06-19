@@ -1,0 +1,31 @@
+* Author: Shoaib
+* Date Created: 19 Jun 2019
+* Environment
+  - OS: Windows 7, Linux
+  - Browsers: Firefox,Chrome
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To check Addition and Subtraction functions are working
+
+* Pre conditions
+  - Nil
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Select any image from the grid.
+  2. Click on Run. 
+  3. Check if a brighter image is displayed on the output layer.
+  4. Select Subtraction radio button.
+  5. Click on Run.
+  6. Check if a darker image is displayed on the output Layer.
+
+* Expected result
+  1. On the first click, A brighter image will be displayed .
+  2. On the second click, A darker image will be displayed.
+
+* Review/comments
+  You can try the functions with different secondary image . Upon addition "Bright" Secondary image will give a more brighter image then "Dull" Secondary image. 
