@@ -86,6 +86,7 @@ function secimgdisplay()
     }
 function addEffect() {
     secimgdisplay();
+    
     drawImage(document.getElementById("input_layer"));
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
     var imageData2 = context2.getImageData(0, 0, canvas2.width, canvas2.height);
@@ -106,6 +107,8 @@ function init() {
     
 	function preview( img )
 	{
+        document.getElementById("input_layer").style.visibility="visible";
+        
         document.getElementById("input_layer").setAttribute("src",img);
         document.getElementById("input_layer").setAttribute("height",300);
         document.getElementById("input_layer").setAttribute("width",300);
@@ -119,10 +122,14 @@ function checkSRC()
 {
    RunButton = document.getElementById("Run");
     RunButton.addEventListener("click",function check(){
+         
        if(document.getElementById("input_layer").getAttribute("src")==="")
         {
             alert("Please select image first !!!");
-        } 
+        }
+        else{
+            document.getElementById("output_layer").style.visibility="visible";
+        }
     });
    
 }
@@ -133,4 +140,7 @@ function FormReset()
     document.getElementById("FitForm").reset();
     document.getElementById("SecForm").reset();
     document.getElementById("secondary_image").setAttribute("src","images/add2.png");
+    document.getElementById("input_layer").style.visibility="hidden";
+    document.getElementById("input_layer").setAttribute("src","");
+    document.getElementById("output_layer").style.visibility="hidden";
 }
