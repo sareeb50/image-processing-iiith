@@ -5,16 +5,16 @@ var RunButton;
 var fitting;
 var canvas;
 var context;
-function doOperation(data1,data2) 
+function doOperation(data1,data2)
 {
   var max = -300;
   var min = 66000;
     var i;
-    var num1,num2,num3;
+    var num1;var num2;var num3;
     var num = new Array();
   operation=$("input:radio[name=Operatn]:checked").val();
-  fitting=$("input:radio[name=fitting]:checked").val();    
-  for (i = 0; i < data1.length; i+=4) 
+  fitting=$("input:radio[name=fitting]:checked").val();
+  for (i = 0; i < data1.length; i+=4)
   {
        num1=data1[i];num2=data1[i+1];num3=data1[i+2];
       //Doing the Operation as per selection
@@ -55,7 +55,7 @@ function doOperation(data1,data2)
           //Doing the fitting as per selection
           switch(fitting)    
           {
-              case "1": // the part below is not required since the canvas attribute automatically clips the data values .
+              case "1": // the part below is not required since the canvas attribute automatically clips the data values.
                         //if(data1[i]>255){data1[i]=255;}
                         //if(data1[i]<0){data1[i]=0;}
                         //if(data1[i+1]>255){data1[i+1]=255;}
@@ -68,11 +68,7 @@ function doOperation(data1,data2)
                         data1[i+2] = 255*((num[i+2]-min)/(max-min));
                         break;
               default:  alert("Select Fitting");
-          }
-
-      
-     
-      
+          } 
       }
 }
 function drawImage(image) 
@@ -100,41 +96,25 @@ function init() {
             var image = document.getElementById("input_layer");
             //var secimage = document.getElementById("secondary")
             RunButton = document.getElementById("Run");
-            
             canvas = document.getElementById("output_layer");
-            context = canvas.getContext("2d");
-  
+            context = canvas.getContext("2d");  
             // Set the canvas the same width and height of the image
             canvas.width = image.width;
             canvas.height = image.height;
-
-           
-           
-  
             RunButton.addEventListener("click", addEffect);
         }
     
 	function preview( img )
 	{
-		document.getElementById("input_layer").setAttribute("src",img);
+        document.getElementById("input_layer").setAttribute("src",img);
         document.getElementById("input_layer").setAttribute("height",300);
         document.getElementById("input_layer").setAttribute("width",300);
         init();
 	}
     function previewSec( img )
-	{
-		
-        document.getElementById("secondary_image").setAttribute("src",img);
-       
-       
-        
+	{	
+        document.getElementById("secondary_image").setAttribute("src",img); 
 	}
-    
-   
-
-
-
-    
 function checkSRC()
 {
    RunButton = document.getElementById("Run");
@@ -147,14 +127,7 @@ function checkSRC()
    
 }
 window.addEventListener("load",checkSRC);
-
-
-
-
-
-
-    
- function FormReset()
+function FormReset()
 {
     document.getElementById("OperForm").reset();
     document.getElementById("FitForm").reset();
