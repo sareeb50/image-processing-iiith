@@ -75,11 +75,20 @@ function doOperation(data1,data2)
       
       }
 }
+function drawImage(image) 
+     {
+        context.drawImage(image, 0, 0);
+     }
+function secimgdisplay()
+    {
+        var image2 = document.getElementById("secondary_image");
+        canvas2 = document.getElementById("secondary");
+        context2 = canvas2.getContext("2d");
+        canvas2.width = image2.width;
+        canvas2.height = image2.height;
+        context2.drawImage(image2, 0, 0);
+    }
 function addEffect() {
-   
-   
-   
-    
     secimgdisplay();
     drawImage(document.getElementById("input_layer"));
     var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -120,15 +129,7 @@ function init() {
        
         
 	}
-    function secimgdisplay()
-    {
-        var image2 = document.getElementById("secondary_image");
-        canvas2 = document.getElementById("secondary");
-        context2 = canvas2.getContext("2d");
-        canvas2.width = image2.width;
-        canvas2.height = image2.height;
-        context2.drawImage(image2, 0, 0);
-    }
+    
    
 
 
@@ -152,10 +153,7 @@ window.addEventListener("load",checkSRC);
 
 
 
-    function drawImage(image) 
-     {
-        context.drawImage(image, 0, 0);
-     }
+    
  function FormReset()
 {
     document.getElementById("OperForm").reset();
