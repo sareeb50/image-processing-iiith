@@ -4,24 +4,24 @@
 	<title>Virtual Lab in Image Processing</title>
    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>   
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="arith.js"></script>
 
 
     
 </head>
-<body>
-    <div id="Experiment"> 
+<body class="body">
+    <div class="Experiment"> 
     <div id="topbar"> <!--Heading-->
      	<div id="iiit"><img src="images/iiit.png" width="100" height="70"></div>
      	<div id="heading"><h1>Virtual Lab for IMAGE PROCESSING</h1></div>
         <div id="sub_heading"><h3>Image Arithmetic Experiment</h3></div>
      </div>
-    
-    <div id="Select">
+    <div class="row">
+    <div id="Select" class="col-sm-4">
         
         <p id="sel">Select from the images below :</p>
         
@@ -63,7 +63,7 @@
         </div>
         
     </div>
-    <div id="Preview">
+    <div id="Preview" class="col-sm-4">
         <div id="input_image">
             <img id="input_layer"  src="">
         </div>
@@ -71,7 +71,7 @@
         <p class="label">Input Layer</p>
 
     </div>
-    <div id="Output">
+    <div class="col-sm-4" id="Output">
         <div id="output_image">
             <canvas id="output_layer" class="output_image"></canvas>
         </div>
@@ -79,14 +79,14 @@
         <p class="label">Output Layer</p>
 
     </div>
-
+    </div>
     
-    
-    <div class="Parameters" >
+    <div class="row">
+        <div class="Parameters col-sm-4" >
              <table id="table">
                  <tr valign="top">
                      <td>
-                        <h3 style="margin-left: 5px;"> Select Operation</h3>
+                        <h3 class="sel_text" > Select Operation</h3>
                         <form name="Operation" id="OperForm">
                         <input type="radio" name="Operatn" value="1" checked/>Addition<br />
                         <input type="radio" name="Operatn" value="2" />Subtraction<br/>
@@ -96,7 +96,7 @@
                         </form> 
                      </td>
                      <td>
-                         <h3 style="margin-left: 5px;">Select Fitting</h3>
+                         <h3 class="sel_text" >Select Fitting</h3>
                          <form name="technique" id="FitForm">
                          <input type="radio" name="fitting" value="1" checked/>Clipping<br/>
                          <input type="radio" name="fitting" value="2" />Auto-Scaling<br />
@@ -105,7 +105,7 @@
                  </tr>
              </table>
         
-             <h3 style="margin: 5px">Select Secondary Image</h3>
+             <h3 class="sec_text" style="margin: 5px;">Select Secondary Image</h3>
              <form id="SecForm">
              <div id="radio">
 	               <input type="radio" id="dully" name="inpImage" value="images/add2.png"
@@ -120,13 +120,14 @@
              </div></form>
     </div>
     
-    <div id="placeholder" >
+    <div id="placeholder" class="col-sm-8" >
             <img id="secondary_image" src="images/add2.png"   >
-            <canvas id="secondary" class="secondary_image" style="display: none"></canvas>
+            <canvas id="secondary" class="secondary_image" style="display: none;"></canvas>
     </div>
 </div>
+</div>
 
-    <canvas id='blank' style='display:none'></canvas>
+    <canvas id='blank' style='display:none;'></canvas>
     
 
     

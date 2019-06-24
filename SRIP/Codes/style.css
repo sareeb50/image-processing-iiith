@@ -1,9 +1,9 @@
-body{
+.body{
 	background-color: #171717;
     margin: auto;
    
 }
-body {
+.body {
     font-family: Titillium Web;
 }
 
@@ -57,21 +57,20 @@ button {
     color: #c2c2c2;
     font-family: Titillium Web ; 
     text-align: center;
-    margin: 0px 7px;
+    margin: auto;
+    margin-top: 5px;
     padding:5px;
     font-weight: bold;
     font-size: 17px;
     width: 250px;
 }
 #Select{
-    position: relative;;
-    padding: 5px;
-    padding-left: 25px;
-    width: 310px;
+    margin: 20px;
+    width: 320px;
+    height: 390px;
     border: 1px solid #c2c2c2;
     border-radius: 20px;
-    margin: 10px;
-    margin-top: 20px;
+    
     
     
 }
@@ -79,10 +78,10 @@ button {
    margin: auto; 
 }
 #Run{
-    margin: 5px 75px 5px 0px;
+    margin: 5px 105px 5px 0px;
     padding: 5px 30px;
     font-family: Titillium Web ; 
-    border-radius: 10px
+    border-radius: 10px;
     
 }
 #reset{
@@ -98,32 +97,29 @@ button {
 
 #Preview{
     color: #c2c2c2;
-    
-    position: relative;
-    margin-left: 400px;
-    margin-top: -390px;
-    height: 304px;
-    width: 304px;
+    margin: 20px;
+    margin-top: 35px;
+    height: 330px;
+    width: 330px;
 }
 #table{
-    margin: auto
+    margin: auto;
 }
 #SecForm{
-    padding-left: 55px;
+    text-align: center;
     
 }
 #input_image{
     border: 4px solid yellow;
-    height: 300px;
-    width: 300px;
+    height: 309px;
+    width: 309px;
 }
 .Parameters{
 
     color: #c2c2c2;
-    margin-top: 90px;
-    margin-left: 20px;
-    
-    width: 320px;
+    margin: 20px;
+    margin-top: 0px;
+    width: 330px !important;
     height: 260px;
     border: 1px solid;
     border-radius: 20px;
@@ -135,37 +131,45 @@ h3{
     margin-bottom: 5px;
 }
 #Output{
-    position: relative;
-    margin-top:-304px ;
-    margin-left: 750px;;
-    height: 304px;
-    width: 304px;
+    margin: 20px;
+    margin-top: 35px;
+    height: 330px;
+    width: 330px;
     color: #c2c2c2;
 }
 #output_image{
     border: 4px solid blue;
-    height: 300px;
-    width: 300px;
+    height: 307px;
+    width: 307px;
 }
 #Run{
     margin-top: 5px;
 }
 #placeholder{
-    margin: -280px 0px 10px 400px;
-    width:300px;height: 300px;
+    
+    width:312px;height: 312px;
     border: solid grey 1px;
     padding: 5px;
+    margin: 0px 0px 10px 30px;
 }
 .label{
     text-align: right;
     margin-top: 2px
     
 }
-#Experiment{
-    width: 80%;
+.Experiment{
+    width: 1100px !important;
     margin: auto;
     
     padding: auto;
     
+}
+.sel_text{
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-right: 10px
+}
+.sec_text{
+    font-weight: bold;
 }
 
