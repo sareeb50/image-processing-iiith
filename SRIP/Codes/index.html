@@ -8,7 +8,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="arith.js"></script>
+    <script type="text/javascript" src="segment.js"></script>
 
 
     
@@ -18,7 +18,7 @@
     <div id="topbar"> <!--Heading-->
      	<div id="iiit"><img src="images/iiit.png" width="100" height="70"></div>
      	<div id="heading"><h1>Virtual Lab for IMAGE PROCESSING</h1></div>
-        <div id="sub_heading"><h3>Image Arithmetic Experiment</h3></div>
+        <div id="sub_heading"><h3>Image Segmentation Experiment</h3></div>
      </div>
     <div class="row">
     <div id="Select" class="col-sm-4">
@@ -82,52 +82,93 @@
     </div>
     
     <div class="row">
-        <div class="Parameters col-sm-4" >
-             <table id="table">
-                 <tr valign="top">
-                     <td>
-                        <h3 class="sel_text" > Select Operation</h3>
-                        <form name="Operation" id="OperForm">
-                        <input type="radio" name="Operatn" value="1" checked/>Addition<br />
-                        <input type="radio" name="Operatn" value="2" />Subtraction<br/>
-                        <input type="radio" name="Operatn" value="3" />Difference<br/>
-                        <input type="radio" name="Operatn" value="4" />Multiplication<br/>
-                        <input type="radio" name="Operatn" value="5" />Division<br/>
-                        </form> 
-                     </td>
-                     <td>
-                         <h3 class="sel_text" >Select Fitting</h3>
-                         <form name="technique" id="FitForm">
-                         <input type="radio" name="fitting" value="1" checked/>Clipping<br/>
-                         <input type="radio" name="fitting" value="2" />Auto-Scaling<br />
-                         </form> 
-                     </td>
-                 </tr>
-             </table>
-        
-             <h3 class="sec_text" style="margin: 5px;">Select Secondary Image</h3>
-             <form id="SecForm">
-             <div id="radio">
-	               <input type="radio" id="dully" name="inpImage" value="images/add2.png"
-	               onclick="previewSec('images/add2.png')"
-	               checked="checked"/><label for="dully">Dull</label>
-	               <input type="radio" id="brighty" name="inpImage" value="images/add1.png"
-	               onclick="previewSec('images/add1.png')"/>
-	               <label for="brighty">Bright</label>
-	               <input type="radio" id="grady" name="inpImage" value="images/add3.png"
-	               onclick="previewSec('images/add3.png')"/>
-	               <label for="grady">Gradient</label>
-             </div></form>
+        <div class="Parameters" >
+          <table>
+          	<tr>
+          		<input type="radio" name="TypeSeg" value="1" onclick="checkhist()" autocomplete="off" checked/><b>Histogram Based Segementation</b></br>
+          		<div id="HistOptions">
+                    <i>Manual Threshold</i></br>
+          			<input type="radio" name="Hist" value="Man1" autocomplete="off"/>Single Threshold</br>
+          			<input type="radio" name="Hist" value="Man2" autocomplete="off"/>Double Threshold</br>
+          			<i>Automatic Threshold</i></br>
+          			<input type="radio" name="Hist" value="Auto" autocomplete="off" checked />Automatic (Otsu)</br>
+          		</div>
+          	</tr>
+          	<tr>
+          		<input type="radio" name="TypeSeg" value="2" autocomplete="off" onclick="checkreg()" /><b>Region Growing</b></br>
+          		<div id="RegOptions">
+          			<input type="radio" name="RegGrow" value="Mean" autocomplete="off" onclick="checkMean()" checked />Based on Mean</br>
+          			<div id="MeanOptions">
+                        <i>Range :</i></br>
+          				<input type="radio" name="MeanRange" autocomplete="off" value="1" >All included pixels</br>
+          				<input type="radio" name="MeanRange" autocomplete="off" value="2" checked>Last 10 included pixels</br>
+          				<i><p>Deviation: &#177;<span id="MeanDeviation"></span></p></i>
+          				<div class="slidecontainer">
+  							<input type="range" min="1" max="20" value="10" class="slider" autocomplete="off" id="myRange1">
+						</div>
+          			</div>
+          			<input type="radio" name="RegGrow" value="Variance" autocomplete="off" onclick="checkVariance()"/>Based on Variance</br>
+          			<div id="VarianceOptions">
+          				<i>Range :</i></br>
+          				<input type="radio" name="VarRange" autocomplete="off" value="1">All included pixels</br>
+          				<input type="radio" name="VarRange" autocomplete="off" value="2" checked>Last 10 included pixels</br>
+          				<i><p>Deviation: &#177;<span id="VarianceDeviation"></span></p></i>
+          				<div class="slidecontainer">
+  							<input type="range" min="0" max="5" value="2" class="slider" id="myRange2" autocomplete="off">
+						</div>
+          			</div>
+          		</div>
+          	</tr>
+          </table>   
     </div>
     
-    <div id="placeholder" class="col-sm-8" >
-            <img id="secondary_image" src="images/add2.png"   >
-            <canvas id="secondary" class="secondary_image" style="display: none;"></canvas>
-    </div>
+    
 </div>
 </div>
+<script type="text/javascript">
+var slider = document.getElementById("myRange1");
+var output = document.getElementById("MeanDeviation");
+output.innerHTML = slider.value; // Display the default slider value
 
-    <canvas id='blank' style='display:none;'></canvas>
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+} 
+
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("VarianceDeviation");
+output2.innerHTML = slider2.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider2.oninput = function() {
+output2.innerHTML = this.value;
+} 
+</script>
+<script type="text/javascript">
+	function checkhist(){
+        document.getElementById("HistOptions").style.display = "block";
+        document.getElementById("RegOptions").style.display = "none";
+	}
+	function checkreg(){
+        document.getElementById("HistOptions").style.display = "none";
+        document.getElementById("RegOptions").style.display = "block";
+	}
+	function checkMean(){
+        document.getElementById("MeanOptions").style.display = "block";
+        document.getElementById("VarianceOptions").style.display = "none";
+	}
+	function checkVariance(){
+        document.getElementById("VarianceOptions").style.display = "block";
+        document.getElementById("MeanOptions").style.display = "none";
+	}
+	window.addEventListener("load",RadioButtonFormatting);
+	function RadioButtonFormatting(){
+		document.getElementById("RegOptions").style.display = "none";
+		document.getElementById("VarianceOptions").style.display = "none";
+    $('input,textarea').attr('autocomplete', 'off');
+	}
+
+</script>   
     
 
     

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virtual Lab in Image Processing</title>
+   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="arith.js"></script>
+
+
+    
+</head>
+<body class="body">
+    <div class="Experiment"> 
+    <div id="topbar"> <!--Heading-->
+     	<div id="iiit"><img src="images/iiit.png" width="100" height="70"></div>
+     	<div id="heading"><h1>Virtual Lab for IMAGE PROCESSING</h1></div>
+        <div id="sub_heading"><h3>Image Arithmetic Experiment</h3></div>
+     </div>
+    <div class="row">
+    <div id="Select" class="col-sm-4">
+        
+        <p id="sel">Select from the images below :</p>
+        
+        <div class="img_grid">
+            <div id="images">
+                <div class="item">
+                    <img src="images/IMG1.png" width="100" height="100" onclick="preview('images/IMG1.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG2.png" width="100" height="100" onclick="preview('images/IMG2.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG3.png" width="100" height="100" onclick="preview('images/IMG3.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG4.png" width="100" height="100" onclick="preview('images/IMG4.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG5.png" width="100" height="100" onclick="preview('images/IMG5.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG6.png" width="100" height="100" onclick="preview('images/IMG6.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG7.png" width="100" height="100" onclick="preview('images/IMG7.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG8.png" width="100" height="100" onclick="preview('images/IMG8.png')">
+                </div>
+                <div class="item">
+                    <img src="images/IMG9.png" width="100" height="100" onclick="preview('images/IMG9.png')">
+                </div>
+            </div>
+        </div>
+        
+        <div class=".btn-group">
+            <button id="Run">Run</button>
+            <button id="reset"onclick="FormReset()">Reset</button>
+        </div>
+        
+    </div>
+    <div id="Preview" class="col-sm-4">
+        <div id="input_image">
+            <img id="input_layer"  src="">
+        </div>
+    	
+        <p class="label">Input Layer</p>
+
+    </div>
+    <div class="col-sm-4" id="Output">
+        <div id="output_image">
+            <canvas id="output_layer" class="output_image"></canvas>
+        </div>
+    	
+        <p class="label">Output Layer</p>
+
+    </div>
+    </div>
+    
+    <div class="row">
+        <div class="Parameters col-sm-4" >
+             <table id="table">
+                 <tr valign="top">
+                     <td>
+                        <h3 class="sel_text" > Select Operation</h3>
+                        <form name="Operation" id="OperForm">
+                        <input type="radio" name="Operatn" value="1" checked/>Addition<br />
+                        <input type="radio" name="Operatn" value="2" />Subtraction<br/>
+                        <input type="radio" name="Operatn" value="3" />Difference<br/>
+                        <input type="radio" name="Operatn" value="4" />Multiplication<br/>
+                        <input type="radio" name="Operatn" value="5" />Division<br/>
+                        </form> 
+                     </td>
+                     <td>
+                         <h3 class="sel_text" >Select Fitting</h3>
+                         <form name="technique" id="FitForm">
+                         <input type="radio" name="fitting" value="1" checked/>Clipping<br/>
+                         <input type="radio" name="fitting" value="2" />Auto-Scaling<br />
+                         </form> 
+                     </td>
+                 </tr>
+             </table>
+        
+             <h3 class="sec_text" style="margin: 5px;">Select Secondary Image</h3>
+             <form id="SecForm">
+             <div id="radio">
+	               <input type="radio" id="dully" name="inpImage" value="images/add2.png"
+	               onclick="previewSec('images/add2.png')"
+	               checked="checked"/><label for="dully">Dull</label>
+	               <input type="radio" id="brighty" name="inpImage" value="images/add1.png"
+	               onclick="previewSec('images/add1.png')"/>
+	               <label for="brighty">Bright</label>
+	               <input type="radio" id="grady" name="inpImage" value="images/add3.png"
+	               onclick="previewSec('images/add3.png')"/>
+	               <label for="grady">Gradient</label>
+             </div></form>
+    </div>
+    
+    <div id="placeholder" class="col-sm-8" >
+            <img id="secondary_image" src="images/add2.png"   >
+            <canvas id="secondary" class="secondary_image" style="display: none;"></canvas>
+    </div>
+</div>
+</div>
+
+    <canvas id='blank' style='display:none;'></canvas>
+    
+
+    
+</body>
+</html>
