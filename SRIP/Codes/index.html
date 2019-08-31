@@ -28,31 +28,31 @@
         <div class="img_grid">
             <div id="images">
                 <div class="item">
-                    <img src="images/IMG1.png" width="100" height="100" onclick="preview('images/IMG1.png')">
+                    <img src="images/IMG1.png" width="100" height="100" onclick="preview('images/IMG1.png','images/Hist1.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG2.png" width="100" height="100" onclick="preview('images/IMG2.png')">
+                    <img src="images/IMG2.png" width="100" height="100" onclick="preview('images/IMG2.png','images/Hist2.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG3.png" width="100" height="100" onclick="preview('images/IMG3.png')">
+                    <img src="images/IMG3.png" width="100" height="100" onclick="preview('images/IMG3.png','images/Hist3.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG4.png" width="100" height="100" onclick="preview('images/IMG4.png')">
+                    <img src="images/IMG4.png" width="100" height="100" onclick="preview('images/IMG4.png','images/Hist4.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG5.png" width="100" height="100" onclick="preview('images/IMG5.png')">
+                    <img src="images/IMG5.png" width="100" height="100" onclick="preview('images/IMG5.png','images/Hist5.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG6.png" width="100" height="100" onclick="preview('images/IMG6.png')">
+                    <img src="images/IMG6.png" width="100" height="100" onclick="preview('images/IMG6.png','images/Hist6.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG7.png" width="100" height="100" onclick="preview('images/IMG7.png')">
+                    <img src="images/IMG7.png" width="100" height="100" onclick="preview('images/IMG7.png','images/Hist7.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG8.png" width="100" height="100" onclick="preview('images/IMG8.png')">
+                    <img src="images/IMG8.png" width="100" height="100" onclick="preview('images/IMG8.png','images/Hist8.png')">
                 </div>
                 <div class="item">
-                    <img src="images/IMG9.png" width="100" height="100" onclick="preview('images/IMG9.png')">
+                    <img src="images/IMG9.png" width="100" height="100" onclick="preview('images/IMG9.png','images/Hist9.png')">
                 </div>
             </div>
         </div>
@@ -82,36 +82,36 @@
     </div>
     
     <div class="row">
-        <div class="Parameters" >
+        <div class="Parameters col-sm-4" >
           <table>
           	<tr>
-          		<input type="radio" name="TypeSeg" value="1" onclick="checkhist()" autocomplete="off" checked/><b>Histogram Based Segementation</b></br>
+          		<input type="radio" name="TypeSeg" value="1" onclick="checkhist()" autocomplete="off" checked/><b>Histogram Based Segementation</b><br>
           		<div id="HistOptions">
-                    <i>Manual Threshold</i></br>
-          			<input type="radio" name="Hist" value="Man1" autocomplete="off"/>Single Threshold</br>
-          			<input type="radio" name="Hist" value="Man2" autocomplete="off"/>Double Threshold</br>
-          			<i>Automatic Threshold</i></br>
-          			<input type="radio" name="Hist" value="Auto" autocomplete="off" checked />Automatic (Otsu)</br>
+                    <i>Manual Threshold</i><br>
+          			<input type="radio" name="Hist" value="Man1" autocomplete="off"  />Single Threshold<br>
+          			<input type="radio" name="Hist" value="Man2" autocomplete="off"/>Double Threshold<br>
+          			<i>Automatic Threshold</i><br>
+          			<input type="radio" name="Hist" value="Auto" autocomplete="off" checked />Automatic (Otsu)<br>
           		</div>
           	</tr>
           	<tr>
-          		<input type="radio" name="TypeSeg" value="2" autocomplete="off" onclick="checkreg()" /><b>Region Growing</b></br>
+          		<input type="radio" name="TypeSeg" value="2" autocomplete="off" onclick="checkreg()" /><b>Region Growing</b><br>
           		<div id="RegOptions">
-          			<input type="radio" name="RegGrow" value="Mean" autocomplete="off" onclick="checkMean()" checked />Based on Mean</br>
+          			<input type="radio" name="RegGrow" value="Mean" autocomplete="off" onclick="checkMean()" checked />Based on Mean<br>
           			<div id="MeanOptions">
-                        <i>Range :</i></br>
-          				<input type="radio" name="MeanRange" autocomplete="off" value="1" >All included pixels</br>
-          				<input type="radio" name="MeanRange" autocomplete="off" value="2" checked>Last 10 included pixels</br>
+                        <i>Range :</i><br>
+          				<input type="radio" name="MeanRange" autocomplete="off" value="1" >All included pixels<br>
+          				<input type="radio" name="MeanRange" autocomplete="off" value="2" checked>Last 10 included pixels<br>
           				<i><p>Deviation: &#177;<span id="MeanDeviation"></span></p></i>
           				<div class="slidecontainer">
   							<input type="range" min="1" max="20" value="10" class="slider" autocomplete="off" id="myRange1">
 						</div>
           			</div>
-          			<input type="radio" name="RegGrow" value="Variance" autocomplete="off" onclick="checkVariance()"/>Based on Variance</br>
+          			<input type="radio" name="RegGrow" value="Variance" autocomplete="off" onclick="checkVariance()"/>Based on Variance<br>
           			<div id="VarianceOptions">
-          				<i>Range :</i></br>
-          				<input type="radio" name="VarRange" autocomplete="off" value="1">All included pixels</br>
-          				<input type="radio" name="VarRange" autocomplete="off" value="2" checked>Last 10 included pixels</br>
+          				<i>Range :</i><br>
+          				<input type="radio" name="VarRange" autocomplete="off" value="1">All included pixels<br>
+          				<input type="radio" name="VarRange" autocomplete="off" value="2" checked>Last 10 included pixels<br>
           				<i><p>Deviation: &#177;<span id="VarianceDeviation"></span></p></i>
           				<div class="slidecontainer">
   							<input type="range" min="0" max="5" value="2" class="slider" id="myRange2" autocomplete="off">
@@ -119,12 +119,30 @@
           			</div>
           		</div>
           	</tr>
-          </table>   
+          </table> 
+        </div>
+           <div class="Histogram col-sm-4">
+              <div class="Histimage">
+                 <img id="Hist" src="">
+              </div>
+               <i><p>T1: <span id="T1val"></span></p></i>
+              <div class="slidecont">
+                <input type="range" min="0" max="255" value="100" class="slide" autocomplete="off" id="T1">
+             </div>
+               <i><p>T2: <span id="T2val"></span></p></i>
+                <div class="slidecont">
+                <input type="range" min="0" max="255" value="150" class="slide" autocomplete="off" id="T2">
+            </div>
+                
+          </div>  
     </div>
     
     
 </div>
 </div>
+
+<p>T2: <span id="Test1"></span></p>
+<p>T2: <span id="Test2"></span></p>
 <script type="text/javascript">
 var slider = document.getElementById("myRange1");
 var output = document.getElementById("MeanDeviation");
@@ -142,7 +160,26 @@ output2.innerHTML = slider2.value; // Display the default slider value
 // Update the current slider value (each time you drag the slider handle)
 slider2.oninput = function() {
 output2.innerHTML = this.value;
-} 
+}
+
+var slider3 = document.getElementById("T1");
+var output3 = document.getElementById("T1val");
+output3.innerHTML = slider3.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider3.oninput = function() {
+output3.innerHTML = this.value;
+}
+
+var slider4 = document.getElementById("T2");
+var output4 = document.getElementById("T2val");
+output4.innerHTML = slider3.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider4.oninput = function() {
+output4.innerHTML = this.value;
+}
+
 </script>
 <script type="text/javascript">
 	function checkhist(){
@@ -166,7 +203,11 @@ output2.innerHTML = this.value;
 		document.getElementById("RegOptions").style.display = "none";
 		document.getElementById("VarianceOptions").style.display = "none";
     $('input,textarea').attr('autocomplete', 'off');
-	}
+
+
+}
+
+
 
 </script>   
     

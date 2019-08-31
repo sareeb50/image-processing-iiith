@@ -204,3 +204,8 @@ h3{
     padding-left: 30px;
     
 }
+
+.slide {
+   margin-left: 30px;
+   width: 320px !important;
+}
